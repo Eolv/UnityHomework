@@ -15,4 +15,12 @@ public class Asteroid : MonoBehaviour
     {        
         gameObject.transform.position += _asteroidRandomMovement * Time.deltaTime;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Корабль врезался в астероид!");
+        }
+    }
 }
